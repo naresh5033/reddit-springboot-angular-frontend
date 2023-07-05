@@ -41,4 +41,26 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Mysql java driver
 - java mail sender
 
+# FrontEnd 
+
+- lets create a new angular project 
+  - ```ng new angular-reddit-clone
+  - bootstrap ```npm i --save @ng-bootstrap/ng-bootstrap```
+  - ngx web storage ```npm i ngx-webstorage``` for the local storage, so we can store the loginResponse (which has the auth Token, user name, refresh token, and expiration )
+  - ngx toastr ```npm i ngx-toastr``` for the notification
+  - font awesome ```npm i @fortawesome/angular-fontawesome```for the icons
+  - TinyMCE ```npm i --save @tinymce/tinymce-angular``` for editing the posts
+
+# HttpInterceptor
+
+- the concept of the interceptor is similar to the servlet filters in java 
+- in our case the interceptor will intercepts each request thats going to the backend by adding the token infos to the header.
+- and we also maintains the logic for the refresh tokens inside this interceptor
+- if the client sends an expired token to the server the server responds back with the 403 error.
+- and at that point request a new token using the interceptor.
+
+# Testing (Junit and mockito)
+
+- with the mockito we can mock our service, repository and other dependencies
+
 - 
